@@ -23,19 +23,16 @@ def get_positive_integer_input(question_string):
 
 def powers_of_2(amount):
     """returns some number of powers of two"""
-    # build the list of powers of 2
-    p_of_2 = []
-    for x in range(1, amount + 1):
-        p_of_2.append(2**x)
+    p_of_2 = [2**x for x in range(1, amount + 1)]
     return p_of_2
 
 # loop until the user quits
 keep_playing = True
 while keep_playing:
-    amount = get_positive_integer_input("How many powers of two would you like? ")
+    amount = get_positive_integer_input("How many powers of two would you like?")
     if amount is not None:
         print(powers_of_2(amount))
-        if input("again? ").lower() not in ["y", "yes"]:
+        if input("again?").lower() not in ["y", "yes"]:
             # stop playing if the user wants to stop
             keep_playing = False
     else:
